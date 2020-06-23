@@ -2,7 +2,8 @@
 Discord Bot on Python for translating text into different language ( 11 for now ) using Google Translate Python Api.                       
 Included keep alive module for getting presence of bot.
 
-Go on discord developer portar to create your bot account and put the token iside the python file.
+Go on discord developer portar to create your bot account token.
+Create a new file .env on same folder and insert token inside.
 
 when bot is ready on the channel: 
 
