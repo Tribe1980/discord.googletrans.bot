@@ -8,6 +8,16 @@ when bot is ready on the channel:
 !help = help command to translate
 
 Use this command to Translate into specific text:
-!en = translate to English                                                                                                                  !jp = translate to Chinese                                                                                                                   !it = translate to Italian                                                                                                                 !de = translate to German                                                                                                                 !es = translate to Spanish                                                                                                                 !fr = translate to French                                                                                                                 !nl = Translate to Dutch                                                                                                                   !ru = translate to Russian                                                                                                                 !pt = translate to Portughese                                                                                                             !bn = translate to Bengali                                                                                                                 !th = translate to Thai
+!en = translate to English
+!jp = translate to Chinese 
+!it = translate to Italian                                                                                                                 
+!de = translate to German                                                                                                                 
+!es = translate to Spanish                                                                                                                 
+!fr = translate to French                                                                                                                 
+!nl = Translate to Dutch                                                                                                                   
+!ru = translate to Russian                                                                                                                 
+!pt = translate to Portughese                                                                                                             
+!bn = translate to Bengali                                                                                                                 
+!th = translate to Thai
 
 Enjoy
