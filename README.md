@@ -7,7 +7,7 @@ when bot is ready on the channel:
 
 !help = help command to translate
 
-Use this command to Translate into specific text:
+Use this command to Translate into specific text:                                                                                         
 !en = translate to English                                                                                                                 
 !jp = translate to Chinese                                                                                                                 
 !it = translate to Italian                                                                                                                 
