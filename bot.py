@@ -1,14 +1,12 @@
+import os
 import discord
 import googletrans
-
+import keep_alive
 # Create a translator object
 translator = googletrans.Translator()
 
 # The discord client
 client = discord.Client()
-# The token that allows client to run the script
-# token = ...
-token = "NzIzODAwNDYwNjkxMjQzMDc5.Xu3Hqw.V1TV6vnaLaoummm3PamUjNKzx-k"
 
 # Notify on console that the discord bot is ready
 @client.event
@@ -31,7 +29,7 @@ async def on_message(message):
     if message.content.startswith("!help"):
         await message.channel.send("Hello! {} " " Use this command to Translate into specific text:" 
         "                                                  !en = translate to English                          " 
-        "                                                                                                                    !jp translate to Chinese                                                                 " 
+        "                                                                                                                    !jp = translate to Chinese                                                                 " 
         "                                                                                 !it = translate to Italian                                                                                                                    "
         "                         !de = translate to German                                                                        "
         "                                                                     !es = Translate to Spanish                                                                                "
@@ -109,5 +107,5 @@ async def on_message(message):
         # Directly converts English to Chinese (Traditional)
         translated_message = translator.translate(msg, dest="th")
         await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
-    
-client.run(token)
+keep_alive.keep_alive()   
+client.run(os.getenv('TOKEN'))
