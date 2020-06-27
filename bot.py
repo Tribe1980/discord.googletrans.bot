@@ -4,10 +4,6 @@ from discord.ext import commands
 import googletrans
 import keep_alive
 
-
-PREFIX = ("$")
-bot = commands.Bot(command_prefix=PREFIX, description='Hi')
-
 # Create a translator object
 translator = googletrans.Translator()
 
@@ -20,9 +16,7 @@ async def on_ready():
     activity = discord.Game(name="Type !help for commands", type=3)
     await client.change_presence(status=discord.Status.idle, activity=activity)
     print("The bot is ready!")
-    
-
-
+  
 # Responds to commands
 @client.event
 async def on_message(message):
@@ -34,21 +28,26 @@ async def on_message(message):
     if message.content.startswith("!hello"):
         await message.channel.send("Hello! {}".format(message.author.mention))
 
+    # Ping test command
+    ping = (round(client.latency * 1000))
+    if message.content.startswith("!ping"):
+        await message.channel.send("Pong! {} ` ` -> `{}` ms ".format(message.author.mention, ping))
+    
     # Help translate command
     if message.content.startswith("!help"):
         await message.channel.send("Hello! {} \nUse this command to Translate into specific text:" 
-        "\n!en = translate to English" 
-        "\n!jp = translate to Chinese" 
-        "\n!jp = translate to Chinese"
-        "\n!it = translate to Italian"
-        "\n!de = translate to German"
-        "\n!es = Translate to Spanish"
-        "\n!fr = Translate to French"
-        "\n!nl = Translate to Dutch"
-        "\n!ru = Translate to Russian"
-        "\n!pt = Translate to Portughese"
-        "\n!bn = Translate to Bengali"
-        "\n!th = translate to Thai"
+        "\n!en   Translate to English" 
+        "\n!jp   Translate to Chinese"
+        "\n!it   Translate to Italian"
+        "\n!de   Translate to German"
+        "\n!es   Translate to Spanish"
+        "\n!fr   Translate to French"
+        "\n!nl   Translate to Dutch"
+        "\n!ru   Translate to Russian"
+        "\n!pt   Translate to Portughese"
+        "\n!bn   Translate to Bengali"
+        "\n!th   Translate to Thai"
+        "\n\nExample for translate text on German:  \n\n!de hi how are you? \n\n Every time you have a text to translate you have to put the code first! :)  "
         .format(message.author.mention))
 
     if message.content.lower().startswith("!en "):
@@ -117,5 +116,7 @@ async def on_message(message):
         # Directly converts English to Chinese (Traditional)
         translated_message = translator.translate(msg, dest="th")
         await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+
+
 keep_alive.keep_alive()   
 client.run(os.getenv('TOKEN'))
