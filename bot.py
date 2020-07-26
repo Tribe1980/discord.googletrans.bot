@@ -44,6 +44,16 @@ async def on_message(message):
         embed.add_field(name="!pt", value="Translate to Portughese", inline=True)
         embed.add_field(name="!bn", value="Translate to Bengali", inline=True)
         embed.add_field(name="!th", value="Translate to Thai", inline=True)
+        embed.add_field(name="!uk", value="Translate to Ukrainan", inline=True)
+        embed.add_field
+        embed.add_field(name="!ko", value="Translate to Korean", inline=True)
+        embed.add_field(name="!ga", value="Translate to Irish", inline=True)
+        embed.add_field
+        embed.add_field(name="!mk", value="Translate to Irish", inline=True)
+        embed.add_field
+        embed.add_field(name="!ro", value="Translate to Irish", inline=True)
+        embed.add_field
+        embed.add_field(name="!tr", value="Translate to Irish", inline=True)
         embed.add_field(name="=======================================================", value="-----------------------------------------------------------------------------------------", inline=False)
         embed.add_field(name="Example for translate text on German:", value="-----------------------------------------------------------------------------------------", inline=False)
         embed.add_field(name="!de hi how are you?", value="-----------------------------------------------------------------------------------------", inline=False)
@@ -132,6 +142,35 @@ async def on_message(message):
         # Directly converts English to Spanish (Traditional)
         translated_message = translator.translate(msg, dest="ja")
         await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
-
+    if message.content.lower().startswith("!uk "):
+        msg = message.content[3:]
+        # Directly converts English to Spanish (Traditional)
+        translated_message = translator.translate(msg, dest="uk")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!ko "):
+        msg = message.content[3:]
+        # Directly converts English to Spanish (Traditional)
+        translated_message = translator.translate(msg, dest="ko")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!ga "):
+        msg = message.content[3:]
+        # Directly converts English to Spanish (Traditional)
+        translated_message = translator.translate(msg, dest="ga")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!mk "):
+        msg = message.content[3:]
+        # Directly converts English to Spanish (Traditional)
+        translated_message = translator.translate(msg, dest="mk")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!ro "):
+        msg = message.content[3:]
+        # Directly converts English to Spanish (Traditional)
+        translated_message = translator.translate(msg, dest="ro")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!tr "):
+        msg = message.content[3:]
+        # Directly converts English to Spanish (Traditional)
+        translated_message = translator.translate(msg, dest="tr")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
 keep_alive.keep_alive()   
 client.run(os.getenv('TOKEN'))
