@@ -1,6 +1,6 @@
 # discord.googletrans.bot
 Discord Bot on Python for translating text into different language 
-( 18 for now ) using Google Translate Python Api.                       
+( 21 for now ) using Google Translate Python Api.                       
 Included keep alive module for getting presence of bot.
 
 Go on discord developer portar to create your bot account token.
@@ -29,6 +29,9 @@ Use this command to Translate into specific text:
 !mk = translate to Macedonian
 !ro = translate to Romanian
 !tr = translate to Turkish
+!haw = translate to Hawaiian
+!id = translate to Indonesian
+!el = translate to Greek
 
 for keep alive i've used Uptime robot. :P                                                                                                  
 
