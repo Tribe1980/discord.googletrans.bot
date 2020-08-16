@@ -50,6 +50,9 @@ async def on_message(message):
         embed.add_field(name="!mk", value="Translate to Macedonian", inline=True)
         embed.add_field(name="!ro", value="Translate to Romanian", inline=True)
         embed.add_field(name="!tr", value="Translate to Turkish", inline=True)
+        embed.add_field(name="!id", value="Translate to Indonesian", inline=True)
+        embed.add_field(name="!haw", value="Translate to Hawaiian", inline=True)
+        embed.add_field(name="!el", value="Translate to Greek", inline=True)
         embed.add_field(name="=======================================================", value="-----------------------------------------------------------------------------------------", inline=False)
         embed.add_field(name="Example for translate text on German:", value="-----------------------------------------------------------------------------------------", inline=False)
         embed.add_field(name="!de hi how are you?", value="-----------------------------------------------------------------------------------------", inline=False)
@@ -68,7 +71,7 @@ async def on_message(message):
     
     # Translate google engine
     if message.content.lower().startswith("!en "):
-        # Directly converts to English (Traditional)
+        # Grab the message after the command
         msg = message.content[3:]
         # Get the language of the file
         translated_message = translator.translate(msg)
@@ -167,6 +170,21 @@ async def on_message(message):
         msg = message.content[3:]
         # Directly converts to Turkish  (Traditional)
         translated_message = translator.translate(msg, dest="tr")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!haw "):
+        msg = message.content[3:]
+        # Directly converts to Turkish  (Traditional)
+        translated_message = translator.translate(msg, dest="haw")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!id"):
+        msg = message.content[3:]
+        # Directly converts to Turkish  (Traditional)
+        translated_message = translator.translate(msg, dest="id")
+        await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
+    if message.content.lower().startswith("!el "):
+        msg = message.content[3:]
+        # Directly converts to Turkish  (Traditional)
+        translated_message = translator.translate(msg, dest="el")
         await message.channel.send("{} ` ` -> `{}`".format(message.author.mention, translated_message.text))
 keep_alive.keep_alive()   
 client.run(os.getenv('TOKEN'))
